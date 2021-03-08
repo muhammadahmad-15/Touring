@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="/USmap/map.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>States</title>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js" integrity="sha512-s/XK4vYVXTGeUSv4bRPOuxSDmDlTedEpMEcAQk0t/FMd9V6ft8iXdwSBxV0eD60c6w/tjotSlKu9J2AAW1ckTA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js" integrity="sha512-jzL0FvPiDtXef2o2XZJWgaEpVAihqquZT/tT89qCVaxVuHwJ/1DFcJ+8TBMXplSJXE8gLbVAUv+Lj20qHpGx+A==" crossorigin="anonymous"></script>
+    <script src="/html2canvas.js"></script> -->
+  </head>
+<body>
+    <div class="container text-dark state-landing">
+        <div class="row d-flex justify-content-center">
+            <div>
+                <h1 class="text-dark mt-3" style="font-family: 'Courier New', Courier, monospace;">Where have you gone?</h1>
+            </div>
+        </div>
+        <div class="row checkbox-form d-flex justify-content-center">
+          <div id='map-container'></div>
+        </div>
+          <p id="tag-msg"></p>
+          <div id="shirt"></div>
+          <img id="preview">
+          <!-- <div id="photo"> -->
+            <img height="100">
+          <!-- </div> -->
+          <!-- <div class="duplicate" id="copy" style="background-color: orangered;"></div> --> 
+          <!-- <a href="/tagline.html"> -->
+            <div class="row d-flex justify-content-center">
+              <button type="button" onclick="saveMap()"  class="btn btn-primary btn-lg" id="save"
+              style="font-family: 'Courier New', Courier, monospace;">Save Map</button>
+            </div>
+            <div class="row d-flex justify-content-center mt-2">
+              <button type="button" onclick="printMap()" class="btn btn-primary btn-lg tag-it" id="tag"
+              style="font-family: 'Courier New', Courier, monospace;">Tag it!</button>
+            </div><br>
+          <!-- </a> -->
+    </div>
+    <table width="100%" class="us-states" style="display: none;">
+      <tr>
+      <td width="20%" valign="top" class="column"> 
+        <label><input name="states" type="checkbox" id="st1">Alabama</label><br> 
+        <label><input name="states" type="checkbox" id="st2">Alaska</label><br> 
+        <label><input name="states" type="checkbox" id="st3">Arizona</label><br> 
+        <label><input name="states" type="checkbox" id="st4">Arkansas</label><br> 
+        <label><input name="states" type="checkbox" id="st5">California</label><br> 
+        <label><input name="states" type="checkbox" id="st6">Colorado</label><br> 
+        <label><input name="states" type="checkbox" id="st7">Connecticut</label><br> 
+        <label><input name="states" type="checkbox" id="st8">Delaware</label><br> 
+        <label><input name="states" type="checkbox" id="st9">D.C.</label><br> 
+        <label><input name="states" type="checkbox" id="st10">Florida</label><br> 
+        <label><input name="states" type="checkbox" id="st11">Georgia</label><br> 
+        <label><input name="states" type="checkbox" id="st12">Hawaii</label><br> 
+        <label><input name="states" type="checkbox" id="st13">Idaho</label><br> 
+        <label><input name="states" type="checkbox" id="st14">Illinois</label><br> 
+        <label><input name="states" type="checkbox" id="st15">Indiana</label><br> 
+        <label><input name="states" type="checkbox" id="st16">Iowa</label><br> 
+        <label><input name="states" type="checkbox" id="st17">Kansas</label><br> 
+        <label><input name="states" type="checkbox" id="st18">Kentucky</label><br> 
+        <label><input name="states" type="checkbox" id="st19">Louisiana</label><br> 
+        <label><input name="states" type="checkbox" id="st20">Maine</label><br> 
+        <label><input name="states" type="checkbox" id="st21">Maryland</label><br> 
+        <label><input name="states" type="checkbox" id="st22">Massachusetts</label><br> 
+        <label><input name="states" type="checkbox" id="st23">Michigan</label><br> 
+        <label><input name="states" type="checkbox" id="st24">Minnesota</label><br> 
+        <label><input name="states" type="checkbox" id="st25">Mississippi</label><br> 
+        <label><input name="states" type="checkbox" id="st26">Missouri</label><br> 
+        <label><input name="states" type="checkbox" id="st27">Montana</label><br> 
+        <label><input name="states" type="checkbox" id="st28">Nebraska</label><br> 
+        <label><input name="states" type="checkbox" id="st29">Nevada</label><br> 
+        <label><input name="states" type="checkbox" id="st30">New Hampshire</label><br> 
+        <label><input name="states" type="checkbox" id="st31">New Jersey</label><br> 
+        <label><input name="states" type="checkbox" id="st32">New Mexico</label><br> 
+        <label><input name="states" type="checkbox" id="st33">New York</label><br> 
+        <label><input name="states" type="checkbox" id="st34">North Carolina</label><br> 
+        <label><input name="states" type="checkbox" id="st35">North Dakota</label><br> 
+        <label><input name="states" type="checkbox" id="st36">Ohio</label><br> 
+        <label><input name="states" type="checkbox" id="st37">Oklahoma</label><br> 
+        <label><input name="states" type="checkbox" id="st38">Oregon</label><br> 
+        <label><input name="states" type="checkbox" id="st39">Pennsylvania</label><br> 
+        <label><input name="states" type="checkbox" id="st40">Rhode Island</label><br> 
+        <label><input name="states" type="checkbox" id="st41">South Carolina</label><br> 
+        <label><input name="states" type="checkbox" id="st42">South Dakota</label><br> 
+        <label><input name="states" type="checkbox" id="st43">Tennessee</label><br> 
+        <label><input name="states" type="checkbox" id="st44">Texas</label><br> 
+        <label><input name="states" type="checkbox" id="st45">Utah</label><br> 
+        <label><input name="states" type="checkbox" id="st46">Vermont</label><br> 
+        <label><input name="states" type="checkbox" id="st47">Virginia</label><br> 
+        <label><input name="states" type="checkbox" id="st48">Washington</label><br> 
+        <label><input name="states" type="checkbox" id="st49">West Virginia</label><br> 
+        <label><input name="states" type="checkbox" id="st50">Wisconsin</label><br> 
+        <label><input name="states" type="checkbox" id="st51">Wyoming</label><br> 
+      </td>
+</body>
+<!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="/script.js"></script>
+<script src="/USmap/raphael.min.js"></script>
+<script src="/USmap/settings.js"></script>
+<script src="/USmap/paths.js"></script>
+<script src="/USmap/map.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.js" integrity="sha512-UNbeFrHORGTzMn3HTt00fvdojBYHLPxJbLChmtoyDwB6P9hX5mah3kMKm0HHNx/EvSPJt14b+SlD8xhuZ4w9Lg==" crossorigin="anonymous"></script>
+
+<script>
+  var map = new FlaMap(map_cfg);
+  map.drawOnDomReady('map-container');
+  map.on('click', function(ev, sid, map) {
+    if(document.getElementById(sid).checked) {
+			document.getElementById(sid).checked = false;
+			map.stateHighlightOff(sid);
+		} else {
+			document.getElementById(sid).checked = true;
+			map.stateHighlightOn(sid, '#ff0000', '#ffffff');
+		}
+    });
+</script>
+<script>
+  function saveMap() {
+    domtoimage.toBlob(document.getElementById('map-container'))
+      .then(function (blob) {
+          // window.saveAs(blob, 'output.png');
+          console.log(blob);
+          var reader = new FileReader();
+          reader.onload = function() {
+              sessionStorage.setItem('recent-image',reader.result);
+          }
+          // sessionStorage.setItem('recent-image',reader.result);
+          reader.readAsDataURL(blob);
+  })
+}
+  function printMap() {
+    // domtoimage.toBlob(document.getElementById('map-container'))
+    //   .then(function (blob) {
+          // window.saveAs(blob, 'output.png');
+          // console.log(blob);
+          // var reader = new FileReader();
+          // reader.onload = function() {
+          //     sessionStorage.setItem('recent-image',reader.result);
+          // }
+          // sessionStorage.setItem('recent-image',reader.result);
+          // reader.readAsDataURL(blob);
+          // var resultImg = sessionStorage.getItem('recent-image');
+          // document.getElementById('preview').setAttribute('src',resultImg);
+      // });
+  }
+</script>
+<script src="/javascript/state-script.js"></script>
+</html>

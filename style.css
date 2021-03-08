@@ -1,0 +1,161 @@
+.header {
+  background-image: url("images/header.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100vh;
+}
+.header-img {
+    filter: brightness(70%);
+    max-height: 100vh;
+}
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+  .logo {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+    z-index: 10;
+  }
+  .logo img {
+      height: 15vh;
+  }
+  .touring {
+    position: absolute;
+    top: 35%;
+    font-size: 6vh;
+  }
+  .touring-tagline {
+    position: absolute;
+    top: 45%;
+    font-weight: 200;
+    font-size: 3vh;
+  }
+  .creative {
+    position: absolute;
+    top: 70%;
+    /* left: 39%; */
+    /* right: 39%; */
+  }
+  .apparel-landing {
+    background-image: url("/images/apparel.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+.state-landing {
+  background-image: url("/images/america.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+  .input-hidden {
+    position: absolute;
+    left: -9999px;
+  }
+  
+  input[type=radio]:checked + label>img {
+    border: 1px solid #fff;
+    box-shadow: 0 0 3px 3px #090;
+    /* transform: 
+      rotateZ(-10deg) 
+      rotateX(10deg); */
+  }
+  
+  /* Stuff after this is only to make things more pretty */
+  input[type=radio] + label>img {
+    /* border: 1px dashed #444; */
+    width: 150px;
+    height: 150px;
+    transition: 500ms all;
+  }
+  
+  /* .apparel-heading {
+    position: absolute;
+    left: 38%;
+    font-size: 6vh;
+  } */
+  .apparel-form {
+    margin-top: 18%;
+    margin-left: 23%;
+  }
+  .states-heading {
+    position: absolute;
+    left: 35%;
+    font-size: 4vh;
+  }
+  .checkbox-form {
+    margin-top: 10%;
+  }
+  .tagline-landing {
+    background-image: url("/images/tagline.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .tagline-heading {
+    position: absolute;
+    left: 30%;
+    font-size: 5vh;
+  }
+  ul.map li { 
+    float: left;
+    margin: 0 25px 0 0px;
+    width: 120px;
+    border: 0px solid;
+    height: 45px; 
+    padding-left: 6px; 
+    } 
+  ul.map {
+    list-style: square url(https://createaclickablemap.com/li-arrow.png) !important; 
+    } 
+  ul.map li a { 
+    margin: 0;
+    padding: 0;
+    text-decoration:underline; 
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:12px;
+    font-weight:normal;
+    color:#4591b1; 
+    } 
+  ul.map li a:hover { 
+    text-decoration:none;
+    color:#214b6e;
+  } 
+  .linkBack { 
+    display:block;
+    width:130px;
+    position: relative;
+    bottom: 0px;
+    left: 660px;
+    font-family: Arial,Helvetica,sans-serif; 
+    font-size: 10px; 
+    font-style:italic; 
+    color:#666666;
+  } 
+  .linkBack a {
+    color:#666666;
+  }
+  .linkBack a:hover{
+    color:#666666;
+    text-decoration: none;
+  }
+  /* #map-container {
+   margin-left: 27%; 
+  } */
+  #pic {
+    position: absolute;
+    left: 42%;
+    top: 20%;
+  }
+  #tagline {
+    color: red;
+  }
+  .tag-text {
+    top: 46%;
+    left: 42%;
+    z-index: 10;
+  }
+  .result-landing {
+    background-image: url("/images/result.jpg");
+  }
